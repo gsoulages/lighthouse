@@ -1,1 +1,2 @@
-# lighthouse
+# Lighthouse
+## A wave model.
