@@ -1,0 +1,36 @@
+Thoughts on how to design the model, how to present it, etc.
+
+Should probably start with OB, because we surf there the most...
+
+I imagine all of our data will be combined from GETting and parsing other websites. We should find/develop a good library for doing this. I was looking at a python lib that emulates jquery dom parsing, so you can do stuff like $('id=3')...which would be much easier than text parsing with regex.
+
+Basic idea:
+
+html=http.get('url/with/data')
+wave=parse(html)
+
+model(wave, wind, tide)
+
+parse(html doc):
+	$(doc).parseTable
+
+Data Sources:
+
+Waves
+ - 9 band energy (use to fit a curve, or just use bins)
+ - Buoys (use sf bar as the primary, use outer buoys for longer range and to support short range)
+
+Wind
+ - Would be nice to have some guess based on larger trends, then confirm this with local observations, which can be unreliable.
+ - Parse out ob-ks, winds.leverich, surfline, etc.
+
+
+
+
+
+Model
+
+Wind/Wave/Tide
+
+Ideas are in other file, but should identify cherry regions for each spot (i.e. 4ft @ 15s, 4 kts e, 2 ft dropping to 0.5 ft) and be strongly influenced by season and regional trends.
+In addition to displaying the raw data, it should associate data with qualitative descriptions of surf conditions (glassy, cheese wind, devil wind, drained out, etc.).

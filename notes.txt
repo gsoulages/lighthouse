@@ -1,0 +1,73 @@
+Localized (spot specific) wave quality model - not a generalized model that considers bathymetry, substrate, beach angle, sand particle size and composition, localized currents, barriers and wave diffractors, offshore bathymetry, shoaling, wave interaction, and all the other factors that define the physics of how a wave breaks which would determine its quality. However, in the future, if such a model does exist, the inputs from the localized model should be sufficient to provide to this model. As such, the interface is defined by these inputs. This model will be an interaction model that is specific to spots we know intamently, and can provide empricalish observations of wave quality. These will be used to parameterize the model, then a machine learning algorithm will be used to callibrate and improve as new data is recorded.
+
+My guess is that a physical model would involve some wave w/ and energy distribution that approaches a break and has the energy shifted accordingly, which interacts with the rest of the wave according to properties of the bottom/water/current/wind/gravity/the rest of the wave/other waves/etc to plunge in a certain manner for a certain period of time.
+
+**Nice diagram would be to have a wave machine that spits out a sequence of waves - what would it take to produce the exact wave. This would be met with similar conditions for wind and tide**
+
+The first order variables that define wave quality at a particular break are:
+
+1) Swell
+2) Wind
+3) Tide
+
+
+The lower-order paramters for each are disscussed in this section:
+
+Swell
+
+Quantitative:
+- Size (s)
+- Direction (s)
+- 9 band energy/direction
+
+Qualitative:
+- (in)Consistent
+- crossed up
+- rising/fading
+
+Wind
+
+Quantitative:
+- Speed
+- Direction
+- Nearshore
+- Offshore
+- Pressure gradient
+
+Qualitative:
+- Choppy
+- Devil
+- Cheese
+- Offshore/cross/on
+- Glassy
+- Buttery
+- Howling
+- Light
+
+Tide
+
+Quantitative:
+- Height
+- Speed falling/rising
+- High/Low
+- Antecedant conditions (lots of high/lows groom sandbars?)
+
+Qualitative
+- Swamped
+- Drained out
+- Cherried
+- Rising
+- Falling
+- High low
+- Lowish high
+- Super high
+- Super low
+- Time of day (morning offshore vs sickness)
+
+These variables have a significant number of interaction (i.e. some breaks only work at high tide if it is big). These interactions are known only due to experience, because a physical model for wave quality does not exist. This section will outline the internal interactions of these first order variables.
+
+Other factors will be leveraged because this is not a physical model, such as the season, time of day, whether it was good yesterday, whether it is good, etc.
+
+In addition to a quantitative output, each paramter will include qualitative enhancements that describe surf conditions known to surfers (glassy, choppy, consistent, punchy, blown out, victory at sea). **It would be valuable to record a list of all this lingo**
+
+**Paragraphs with topic sentances that open into a longer description of that topic.**
